@@ -1,16 +1,20 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:chat_app/pages/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
-  Firestore.instance.collection('col').document('doc').setData({'texto': 'daniel'});
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+        iconTheme: IconThemeData(color: Colors.blue)
+      ),
+      home: ChatScreen(),
     );
   }
 }
